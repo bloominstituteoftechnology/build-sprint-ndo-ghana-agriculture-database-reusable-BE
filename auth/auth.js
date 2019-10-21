@@ -1,9 +1,8 @@
 const jwt = require('jsonwebtoken');
-
+const secret = require('../data/secret').jwtSecret;
 module.exports = {
     authenticate, generateToken, validUser
 };
-
 
 function authenticate(req, res, next) {
     const token = req.get("Authorization");
@@ -31,7 +30,7 @@ function generateToken(user) {
     const options = {
         expiresIn: "1h",
     }
-    return jwt.sign(payload, options)
+    return jwt.sign(payload, secret, options)
 
 }
 

@@ -15,7 +15,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^3.21.1",
-    "jest": "^24.9.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.19.5",
     "morgan": "^1.9.1",
@@ -23,7 +22,6 @@
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "jest": "^24.7.1",
     "nodemon": "^1.18.11"
   }
 }

@@ -1,5 +1,12 @@
 // Update with your config settings.
-
+// Update with your config settings.
+const localPg = {
+  host: 'localhost',
+  database: 'user',
+  user: 'student',
+  password: 'hired',
+};
+const productionDbConnection = process.env.DATABASE_URL || localPg;
 module.exports = {
 
   development: {
@@ -13,7 +20,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -21,15 +28,15 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './data/migrations'
+    },
   },
 
   production: {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {

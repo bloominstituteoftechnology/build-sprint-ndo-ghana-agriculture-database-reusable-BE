@@ -15,7 +15,6 @@
 {
   username: "David",
   email: "david@email.com",
-  phone: "1(123)456-7890"
 }
 ```
 

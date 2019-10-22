@@ -1,5 +1,8 @@
 const jwt = require('jsonwebtoken');
+const jwt_decode = require('jwt-decode');
 const secret = require('../data/secret').jwtSecret;
+const lastEmployye = require('../data/employeeModel');
+
 module.exports = {
     authenticate, generateToken, validUser
 };
@@ -19,6 +22,17 @@ function authenticate(req, res, next) {
         });
     }
 }
+async function lastStaffmember(token) {
+    let decodedData = jwt_decode(token);
+    try {
+        console.log("decodedData", decodedData)
+        await lastEmployye.addLastEmployee(decodedData)
+
+    } catch (err) {
+        console.log("Inserting failed")
+    }
+}
+
 
 function generateToken(user) {
     const payload = {

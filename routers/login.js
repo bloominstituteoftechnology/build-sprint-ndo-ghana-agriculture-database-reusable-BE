@@ -13,7 +13,6 @@ router.post('/', (req, res) => {
             Employee.findBy({ username })
                 .first()
                 .then(user => {
-                    console.log(user)
                     if ((user && (password === user.password) || bcrypt.compareSync(password, user.password))) {
                         const token = generateToken(user);
                         res.status(200).json({ message: `Welcome ${user.username}!`, token, id: user.id, });

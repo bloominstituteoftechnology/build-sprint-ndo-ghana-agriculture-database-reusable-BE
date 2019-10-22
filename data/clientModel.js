@@ -11,7 +11,7 @@ module.exports = {
 
 
 function find() {
-    return db('clients').select("id", 'name', 'village');
+    return db('clients').select("id", 'name', 'village', 'loanAmount', 'paidAmount', 'dueAmount', 'loanInitialDate', 'loanDueDate', 'achievedBag', 'goalBag');
 }
 
 function findById(id) {

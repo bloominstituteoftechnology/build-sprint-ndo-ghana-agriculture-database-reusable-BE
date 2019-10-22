@@ -8,7 +8,13 @@ module.exports = {
     findById,
     update,
     deleteUser,
+    addLastEmployee,
 };
+
+async function addLastEmployee(lastEmployee) {
+    const [id] = await db('lastSigned').insert(user)
+    return findById(id);
+}
 
 function update(id, user) {
     return db('employee')

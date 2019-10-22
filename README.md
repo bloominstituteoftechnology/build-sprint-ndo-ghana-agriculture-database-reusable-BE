@@ -54,7 +54,7 @@
     "loanAmount": 30000,
     "paidAmount": 20000,
     "dueAmount": 10000,
-    "loanInitailDate": "10/23/19",
+    "loanInitialDate": "10/23/19",
     "loanDueDate": "10/23/19"
 }
 
@@ -71,7 +71,7 @@
     "loanAmount": 300,
     "paidAmount": 200,
     "dueAmount": 100,
-    "loanInitailDate": "10/23/19",
+    "loanInitialDate": "10/23/19",
     "loanDueDate": "10/23/19"
 }
 
@@ -84,7 +84,7 @@
     "loanAmount": 300,
     "paidAmount": 200,
     "dueAmount": 100,
-    "loanInitailDate": "10/23/19",
+    "loanInitialDate": "10/23/19",
     "loanDueDate": "10/23/19"
 }
 ```

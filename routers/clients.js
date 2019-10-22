@@ -5,7 +5,7 @@ const Clients = require('../data/clientModel.js');
 const { validUser, authenticate } = require('../auth/auth.js');
 
 //getting all the clients
-router.get('/all', async (req, res) => {
+router.get('/all', authenticate, async (req, res) => {
     try {
         await Clients.find()
             .then(name => {
@@ -44,7 +44,7 @@ router.get('/:id', authenticate, async (req, res) => {
 })
 
 // create a clients profile
-router.post('/', async (req, res) => {
+router.post('/', authenticate, async (req, res) => {
     try {
         const client = req.body;
         if (!client.name) {
@@ -58,7 +58,7 @@ router.post('/', async (req, res) => {
     }
 }
 );// Delete a client by id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authenticate, async (req, res) => {
     try {
         const client = await Clients.deleteClientById(req.params.id);
         res.status(200).json({ message: `This client profile has deleted successfully` });
@@ -70,7 +70,7 @@ router.delete('/:id', async (req, res) => {
 module.exports = router;
 
 // update a client by id
-router.put('/:id', async (req, res) => {
+router.put('/:id', authenticate, async (req, res) => {
     try {
         const { name, village, loanAmount, paidAmount, dueAmount, loanInitailDate, loanDueDate, achievedBag, goalBag } = req.body;
         const { id } = req.params;

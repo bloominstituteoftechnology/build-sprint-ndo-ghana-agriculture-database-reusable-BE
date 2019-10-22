@@ -2,7 +2,7 @@
 exports.up = function (knex, Promise) {
     return knex.schema.createTable("clients", table => {
         table.increments('id');
-        table.string('name').notNullable().unique();
+        table.string('name').notNullable();
         table.string('village').notNullable();
         table.float('loanAmount');
         table.float('paidAmount');

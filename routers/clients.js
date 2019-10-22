@@ -17,7 +17,7 @@ router.get('/all', async (req, res) => {
     }
 })
 //getting a the client's all info
-router.get('/individual', async (req, res) => {
+router.get('/individual', authenticate, async (req, res) => {
     const { name, village } = req.body
     try {
         await Clients.findByNameVillage(name, village)
@@ -30,7 +30,7 @@ router.get('/individual', async (req, res) => {
     }
 })
 //getting a the client's all info
-router.get('/:id', async (req, res) => {
+router.get('/:id', authenticate, async (req, res) => {
     const { id } = req.params;
     try {
         await Clients.findById(id)
@@ -72,12 +72,12 @@ module.exports = router;
 // update a client by id
 router.put('/:id', async (req, res) => {
     try {
-        const { name, village, loanAmount, paidAmount, dueAmount, loanInitailDate, loanDueDate } = req.body;
+        const { name, village, loanAmount, paidAmount, dueAmount, loanInitailDate, loanDueDate, achievedBag, goalBag } = req.body;
         const { id } = req.params;
         if (!name) {
             res.status(400).json({ message: "Please provide all the required information of the plant." })
         }
-        const count = await Clients.updateClient(id, req.body)
+        await Clients.updateClient(id, req.body)
             .then(user => {
                 if (user) {
                     res.status(200).json(req.body)

@@ -7,7 +7,7 @@ exports.up = function (knex, Promise) {
         table.float('loanAmount');
         table.float('paidAmount');
         table.float('dueAmount');
-        table.string('loanInitailDate');
+        table.string('loanInitialDate');
         table.string('loanDueDate');
 
     })

@@ -9,6 +9,8 @@ exports.up = function (knex, Promise) {
         table.float('dueAmount');
         table.string('loanInitialDate');
         table.string('loanDueDate');
+        table.integer('achievedBag');
+        table.integer('goalBag');
 
     })
 

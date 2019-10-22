@@ -15,20 +15,20 @@ function find() {
 }
 
 function findById(id) {
-    return db('clients').select('id', 'name', 'village', 'loanAmount', 'paidAmount', 'dueAmount', 'loanInitailDate', 'loanDueDate')
+    return db('clients').select('id', 'name', 'village', 'loanAmount', 'paidAmount', 'dueAmount', 'loanInitialDate', 'loanDueDate', 'achievedBag', 'goalBag')
         .where({ id })
         .first();
 }
 
 function findByNameVillage(name, village) {
-    return db('clients').select('name', 'village', 'loanAmount', 'paidAmount', 'dueAmount', 'loanInitailDate', 'loanDueDate')
+    return db('clients').select('name', 'village', 'loanAmount', 'paidAmount', 'dueAmount', 'loanInitialDate', 'loanDueDate', 'achievedBag', 'goalBag')
         .where({ name, village })
         .first();
 }
 
 async function addClient(clientInfo) {
-    const { name, village, loanAmount, paidAmount, dueAmount, loanInitailDate, loanDueDate } = clientInfo;
-    const [id] = await db('clients').insert({ name, village, loanAmount, paidAmount, dueAmount, loanInitailDate, loanDueDate })
+    const { name, village, loanAmount, paidAmount, dueAmount, loanInitialDate, loanDueDate, achievedBag, goalBag } = clientInfo;
+    const [id] = await db('clients').insert({ name, village, loanAmount, paidAmount, dueAmount, loanInitialDate, loanDueDate, achievedBag, goalBag })
         .returning("id");
     return findById(id);
 }

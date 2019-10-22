@@ -55,7 +55,9 @@
     "paidAmount": 20000,
     "dueAmount": 10000,
     "loanInitialDate": "10/23/19",
-    "loanDueDate": "10/23/19"
+    "loanDueDate": "10/23/19",
+    "achievedBag": 30,
+    "goalBag": 20
 }
 
 ```
@@ -72,7 +74,9 @@
     "paidAmount": 200,
     "dueAmount": 100,
     "loanInitialDate": "10/23/19",
-    "loanDueDate": "10/23/19"
+    "loanDueDate": "10/23/19",
+    "achievedBag": 30,
+    "goalBag": 20
 }
 
 ```
@@ -85,7 +89,9 @@
     "paidAmount": 200,
     "dueAmount": 100,
     "loanInitialDate": "10/23/19",
-    "loanDueDate": "10/23/19"
+    "loanDueDate": "10/23/19",
+    "achievedBag": 30,
+    "goalBag": 20
 }
 ```
 ---

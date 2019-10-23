@@ -31,7 +31,7 @@ function deleteUser(id) {
 }
 
 function find() {
-    return db('employee').select('id', 'username');
+    return db('employee').select('id', 'username', 'email');
 }
 
 function findBy(filter) {

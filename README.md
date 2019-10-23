@@ -38,14 +38,40 @@
 }
 ```
 ---
+### GET /api/employee/all
+**JWT token required**
+* Returns all Employee's info. Only accessible by an authorized employee.
+---
+### PUT /api/client/:id
+**JWT token required**
+* Update Client info. Only accessible by that an authorized employee.
+* Request example:
+```
+{
+    "username": "Norman",
+    "email": "new@email.com"
+}
+```
+* Returns 
+```
+{
+    "username": "Norman",
+    "email": "new@email.com"
+}
+```
+---
+### DELETE /api/employee/:id
+**JWT token required**
+* Delete an employee profile. Only accessible by an authorized employee.
+---
 ### GET /api/client/all
 **JWT token required**
-* Returns all client's info. Only accessible by authorized employee.
+* Returns all client's info. Only accessible by an authorized employee.
 
 ---
 ### GET /api/client/:id
 **JWT token required**
-* Returns an object with a single client's info. Only accessible by Authorized employee.
+* Returns an object with a single client's info. Only accessible by an authorized employee.
 ```
 {
     "id": 5,
@@ -64,7 +90,7 @@
 ---
 ### PUT /api/client/:id
 **JWT token required**
-* Update Client info. Only accessible by that Authorized employee.
+* Update Client info. Only accessible by that an authorized employee.
 * Request example:
 ```
 {
@@ -97,4 +123,4 @@
 ---
 ### DELETE /api/client/:id
 **JWT token required**
-* Delete a client. Only accessible by Authorized employee.
+* Delete a client. Only accessible by an authorized employee.

@@ -64,6 +64,40 @@
 **JWT token required**
 * Delete an employee profile. Only accessible by an authorized employee.
 ---
+### POST /api/client
+**JWT token required**
+* Request Example
+```
+{
+    "name": "Duck",
+    "village": "Brooklyn",
+    "loanAmount": 30000,
+    "paidAmount": 20000,
+    "dueAmount": 10000,
+    "loanInitialDate": "10/23/19",
+    "loanDueDate": "10/23/19",
+    "achievedBag": 30,
+    "goalBag": 20
+}
+
+```
+* Returns 
+```
+{
+    "id": 7,
+    "name": "Duck",
+    "village": "Brooklyn",
+    "loanAmount": 30000,
+    "paidAmount": 20000,
+    "dueAmount": 10000,
+    "loanInitialDate": "10/23/19",
+    "loanDueDate": "10/23/19",
+    "achievedBag": 30,
+    "goalBag": 20
+}
+
+```
+---
 ### GET /api/client/all
 **JWT token required**
 * Returns all client's info. Only accessible by an authorized employee.

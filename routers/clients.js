@@ -72,19 +72,14 @@ module.exports = router;
 // update a client by id
 router.put('/:id', authenticate, async (req, res) => {
     try {
-        const { name, village, loanAmount, paidAmount, dueAmount, loanInitailDate, loanDueDate, achievedBag, goalBag } = req.body;
+        const { name } = req.body;
         const { id } = req.params;
         if (!name) {
             res.status(400).json({ message: "Please provide all the required information of the plant." })
+        } else {
+            const updatedClient = await Clients.updateClient(id, req.body)
+            res.status(200).json(updatedClient)
         }
-        await Clients.updateClient(id, req.body)
-            .then(user => {
-                if (user) {
-                    res.status(200).json(req.body)
-                } else {
-                    res.status(404).json({ message: "The client with the specified ID does not exist." })
-                }
-            })
     } catch (err) {
         res.status(500).json({ error: `there was an error accessing the db: ${err}` });
     }

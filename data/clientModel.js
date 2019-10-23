@@ -40,9 +40,12 @@ function deleteClientById(id) {
         .delete();
 }
 
-function updateClient(id, client) {
-    return db('clients')
+async function updateClient(id, client) {
+    await db('clients')
         .where('id', Number(id))
-        .update(client);
+        .update(client).returning("id")
+
+    return await findById(id);
+
 }
 

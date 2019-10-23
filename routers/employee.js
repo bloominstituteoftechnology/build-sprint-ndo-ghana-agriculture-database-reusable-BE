@@ -48,7 +48,7 @@ router.put('/:id', authenticate, async (req, res) => {
     try {
         const { username, email } = req.body;
         const { id } = req.params;
-        if (!name) {
+        if (!username) {
             res.status(400).json({ message: "Please provide all the required information of the plant." })
         }
         await Employee.update(id, req.body)

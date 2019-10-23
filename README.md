@@ -42,9 +42,9 @@
 **JWT token required**
 * Returns all Employee's info. Only accessible by an authorized employee.
 ---
-### PUT /api/client/:id
+### PUT /api/employee/:id
 **JWT token required**
-* Update Client info. Only accessible by that an authorized employee.
+* Update an Employee info. Only accessible by that an authorized employee.
 * Request example:
 ```
 {
